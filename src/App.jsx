@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton, useUser } from '@clerk/clerk-react';
 import { MyContext } from './UserContext';
+import Poper from './component/Poper';
 
 const App = () => {
   const { checkUSER, setcheckUSER, checkUser } = useContext(MyContext);
@@ -66,9 +67,9 @@ const App = () => {
           {checkUSER === null ? (
             <p className="text-slate-400">Loading workspace...</p>
           ) : checkUSER ? (
-            <p className="text-emerald-400">Workspace Connected</p>
+            <p className="text-emerald-400">SMTP Configured & Ready</p>
           ) : (
-            <p className="text-amber-400">SMTP setup required</p>
+            <Poper />
           )}
         </main>
       </SignedIn>
