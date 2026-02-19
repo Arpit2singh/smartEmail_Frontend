@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton, useUser } from '@clerk/clerk-react';
 import { MyContext } from './UserContext';
 import Poper from './component/Poper';
+import SendEmailForm from './component/SendEmailForm';
 
 const App = () => {
   const { checkUSER, setcheckUSER, checkUser } = useContext(MyContext);
@@ -63,11 +64,11 @@ const App = () => {
           <h1 className="font-bold text-lg">SmartEmail Workspace</h1>
           <UserButton afterSignOutUrl="/" />
         </header>
-        <main className="p-6 max-w-7xl mx-auto">
+        <main className="p-6 max-w-7xl mx-auto space-y-8">
           {checkUSER === null ? (
             <p className="text-slate-400">Loading workspace...</p>
           ) : checkUSER ? (
-            <p className="text-emerald-400">SMTP Configured & Ready</p>
+            <SendEmailForm />
           ) : (
             <Poper />
           )}
