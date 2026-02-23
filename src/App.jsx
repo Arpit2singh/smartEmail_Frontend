@@ -3,6 +3,7 @@ import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton, useUser } 
 import { MyContext } from './UserContext';
 import Poper from './component/Poper';
 import SendEmailForm from './component/SendEmailForm';
+import Dashboard from './component/Dashboard';
 
 const App = () => {
   const { checkUSER, setcheckUSER, checkUser } = useContext(MyContext);
@@ -68,7 +69,10 @@ const App = () => {
           {checkUSER === null ? (
             <p className="text-slate-400">Loading workspace...</p>
           ) : checkUSER ? (
-            <SendEmailForm />
+            <div className="space-y-8">
+              <SendEmailForm />
+              <Dashboard />
+            </div>
           ) : (
             <Poper />
           )}
