@@ -98,8 +98,8 @@ export default function Dashboard() {
                 <td className="p-3">{email.recipient}</td>
                 <td className="p-3">{email.subject}</td>
                 <td className="p-3">
-                  <span className={`px-2 py-1 rounded text-sm ${email.status === 'opened' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'}`}>
-                    {email.status.toUpperCase()}
+                  <span className={`px-2 py-1 rounded text-sm ${email.count >=1  ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'}`}>
+                    {email.count >= 1 ? 'Opened' : 'Not Opened'}
                   </span>
                 </td>
                 <td className="p-3">{email.openedAt}</td>
