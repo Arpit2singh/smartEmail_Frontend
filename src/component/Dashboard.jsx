@@ -77,7 +77,7 @@ export default function Dashboard() {
   if (!isSignedIn) return <div>Sign in to view this page</div>
 
   return (
-    <div className='flex justify-between h-screen min-w-full ' >
+    <div className='flex flex-wrap justify-between h-screen min-w-full overflow-y-auto ' >
 
         <div className="max-w-4xl mx-auto mt-10 p-6 bg-white shadow-md rounded-lg min-w-[80vw]  ">
       <h2 className="text-2xl font-bold mb-6">Tracking Dashboard , Hey! {user.firstName} </h2>
@@ -92,7 +92,7 @@ export default function Dashboard() {
               <th className="p-3">Count</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody  >
             {emails.map((email , key) => (
               <tr key={key} className="border-b hover:bg-gray-50">
                 <td className="p-3">{email.recipient}</td>
