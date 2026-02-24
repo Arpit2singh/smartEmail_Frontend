@@ -102,7 +102,7 @@ export default function Dashboard() {
                     {email.count >= 1 ? 'Opened' : 'Not Opened'}
                   </span>
                 </td>
-                <td className="p-3">{email.openedAt}</td>
+                <td className="p-3">{email.openedAt ? new Date(email.openedAt).toLocaleString() : 'Not Opened Yet'}</td>
                  <td className="p-3">{email.count}</td>
               </tr>
             ))}
